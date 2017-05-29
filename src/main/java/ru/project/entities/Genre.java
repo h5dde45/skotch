@@ -1,6 +1,5 @@
 package ru.project.entities;
 
-import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -20,7 +19,6 @@ public class Genre {
         this.id = id;
     }
 
-    @Basic
     @Column(name = "name")
     public String getName() {
         return name;
