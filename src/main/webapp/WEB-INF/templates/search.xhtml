@@ -17,8 +17,12 @@
                 <input type="submit" class="button-text"/>
                 <h:inputText id="search_string" styleClass="search-text"/>
                 <p:commandButton id="btnSearch" value="Поиск" styleClass="button"/>
+
                 <div class="dropdown">
-                    <h:selectOneMenu id="search_select"/>
+                    <h:selectOneMenu id="search_select" styleClass="select_search"
+                    value="#{utils.selectedSearchType}">
+                        <f:selectItems value="${utils.searchTypeMap}"/>
+                    </h:selectOneMenu>
                 </div>
             </h:form>
 

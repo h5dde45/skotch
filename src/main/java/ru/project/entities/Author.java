@@ -88,12 +88,6 @@ public class Author {
 
     @Override
     public String toString() {
-        return "Author{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", midlename='" + midlename + '\'' +
-                ", surname='" + surname + '\'' +
-                ", birthday='" + birthday + '\'' +
-                '}';
+        return  name;
     }
 }

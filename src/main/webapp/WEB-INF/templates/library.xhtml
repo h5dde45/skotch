@@ -8,7 +8,7 @@
 <f:view>
     <h:head>
         <title>
-            <ui:insert name="tile"/>
+            <ui:insert name="title"/>
         </title>
     </h:head>
     <h:body>
@@ -28,8 +28,9 @@
             <div class="content">
                 <ui:include src="genres.xhtml"/>
                 <div class="right-content">
+                    <ui:insert name="books_count"/>
+                    <ui:insert name="content"/>
                     <div class="clear">
-
                     </div>
                 </div>
             </div>
