@@ -22,7 +22,7 @@
     </ui:define>
     <ui:define name="content">
         <h:form id="booksForm">
-            <p:dataGrid rowIndexVar="rowIndex" columns="2" lazy="true"
+            <p:dataGrid rowIndexVar="rowIndex" columns="1" lazy="true"
                         var="b" value="${libraryFacade.books}" id="booksList" styleClass="books_list"
                         paginator="true" rows="4" paginatorPosition="bottom" rowsPerPageTemplate="4,10,20"
                         paginatorAlwaysVisible="true"
@@ -31,7 +31,8 @@
                 <div class="item">
                     <div class="image-info">
                         <h:outputLink styleClass="content_link" target="_blank">
-                            <p:graphicImage width="110" height="150"/>
+                            <p:graphicImage width="110" height="150"
+                                            value="/ShowImage?index=#{rowIndex}"/>
                         </h:outputLink>
                     </div>
 

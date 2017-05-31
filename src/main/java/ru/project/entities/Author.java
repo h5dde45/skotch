@@ -10,6 +10,13 @@ public class Author {
     private String surname;
     private String birthday;
 
+    public Author() {
+    }
+
+    public Author(String name) {
+        this.name=name;
+    }
+
     @Id
     @Column(name = "id")
     public int getId() {

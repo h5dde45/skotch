@@ -42,13 +42,22 @@ public class BookDaoImpl implements BookDao {
         return books;
     }
 
+    @Transactional
     @Override
     public List<Book> getBooks(Author author) {
         List<Book> books=createBookList(createBookCriteria()
                 .add(Restrictions.ilike("author.name",author.getName(),MatchMode.ANYWHERE)));
         return books;
     }
+    @Transactional
+    @Override
+    public List<Book> getBooks(String bookName) {
+        List<Book> books = createBookList(createBookCriteria().add(Restrictions.
+                ilike("b.name", bookName, MatchMode.ANYWHERE)));
+        return books;
+    }
 
+    @Transactional
     @Override
     public List<Book> getBooks(Genre genre) {
         List<Book> books=createBookList(createBookCriteria()

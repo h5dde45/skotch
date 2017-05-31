@@ -10,7 +10,6 @@ import java.util.Map;
 public class Utils {
 
     private Map<String,SearchType> searchTypeMap=new HashMap<>();
-    private SearchType selectedSearchType=SearchType.TITLE;
 
     public Map<String, SearchType> getSearchTypeMap(){
         searchTypeMap.clear();
@@ -19,11 +18,4 @@ public class Utils {
         return searchTypeMap;
     }
 
-    public SearchType getSelectedSearchType() {
-        return selectedSearchType;
-    }
-
-    public void setSelectedSearchType(SearchType selectedSearchType) {
-        this.selectedSearchType = selectedSearchType;
-    }
 }
