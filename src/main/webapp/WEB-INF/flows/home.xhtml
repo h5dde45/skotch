@@ -3,14 +3,44 @@
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
 >
 <ui:composition template="/WEB-INF/homeTemplates/title.xhtml">
+
     <ui:define name="title">
         ViewStatement
     </ui:define>
 
     <ui:define name="content">
-        +++++
+        <h:form id="booksForm" styleClass="homeContent">
+            <p:dataGrid rowIndexVar="rowIndex" columns="4" lazy="true"
+                        id="booksList"
+                        var="b" value="${libraryFacade.books}"
+                        rows="4" paginator="true" paginatorPosition="bottom"
+                        paginatorAlwaysVisible="true" rowsPerPageTemplate="4,8,12"
+                        paginatorTemplate=" {CurrentPageReport} {FirstPageLink}
+                        {PreviousPageLink} {PageLinks} {NextPageLink}
+                        {LastPageLink} {RowsPerPageDropdown}">
+
+                <div class="homeItem">
+                    <div class="homeImage">
+                        <h:outputLink target="_blank">
+                            <p:graphicImage height="100%"
+                                            value="/ShowImage?index=#{rowIndex}"/>
+                        </h:outputLink>
+                    </div>
+                    <div class="username">
+                        ${b.name}
+                    </div>
+                    <div class="message">
+                        ${b.descr}
+                    </div>
+
+                </div>
+            </p:dataGrid>
+        </h:form>
     </ui:define>
+
 </ui:composition>
 </html>
